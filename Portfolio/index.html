@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prithish Misra — Growth, Business, & AI</title>
+  <meta name="description" content="Portfolio of Prithish Misra — aspiring entrepreneur, founder of ShriramJourney.com, focused on Growth and AI-driven solutions." />
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  
+  <style>
+    /* CSS Reset & Variables (Unchanged for the most part, focusing on theme variables) */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { line-height: 1.15; -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body { margin: 0; }
+    h1, h2, h3, p { margin: 0; }
+    button { border: none; padding: 0; background: none; }
+
+    :root{
+      --bg: #f7f9fc;
+      --card: #ffffff;
+      --muted: #6b7280;
+      --text-primary: #111827; 
+      --accent: #2563eb; /* blue */
+      --accent-2: #06b6d4; /* teal */
+      --glass: rgba(255,255,255,0.6);
+      --radius: 14px;
+      --shadow: 0 6px 18px rgba(16,24,40,0.08);
+      --border-color: rgba(0,0,0,0.08);
+      color-scheme: light;
+    }
+    [data-theme="dark"]{
+      --bg: #0b1220;
+      --card: #071029;
+      --muted: #9aa6b2;
+      --text-primary: #f3f4f6;
+      --accent: #60a5fa;
+      --accent-2: #2dd4bf;
+      --glass: rgba(255,255,255,0.04);
+      --shadow: 0 6px 18px rgba(2,6,23,0.6);
+      --border-color: rgba(255,255,255,0.1);
+      color-scheme: dark;
+    }
+    
+    body{
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background:linear-gradient(180deg, var(--bg), var(--bg));
+      color:var(--text-primary); 
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.6;
+      padding:32px;
+    }
+    .container{max-width:1100px;margin:0 auto}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:var(--shadow);display:grid;place-items:center;color:white;font-weight:700}
+    
+    .avatar{
+      width: 100%;
+      height: 360px;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: var(--shadow);
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 80px;
+      font-weight: 700;
+      overflow: hidden;
+    }
+
+    nav a{margin:0 10px;color:var(--muted);text-decoration:none;font-weight:600}
+    nav a:hover{color:var(--accent)}
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin-bottom:28px}
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}
+
+    /* Section Headings */
+    h2 { 
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: var(--text-primary);
+    }
+
+    /* About */
+    .about h1{
+        margin:0 0 6px 0;
+        color:var(--text-primary); 
+        font-size: 2.5rem; 
+    }
+    .about h1 strong{color:var(--accent);}
+    .about p{margin:0;color:var(--muted);font-size:1.1rem;}
+
+    /* Skills */
+    .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .skill{padding:8px 12px;border-radius:999px;background:linear-gradient(180deg, rgba(0,0,0,0.03), rgba(255,255,255,0.02));font-weight:600;color:var(--muted);box-shadow:0 2px 6px rgba(2,6,23,0.02)}
+    [data-theme="dark"] .skill{background:rgba(255,255,255,0.06);}
+    
+    /* Project and Experience Grids */
+    .grid-section{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+    @media (max-width:1000px){.grid-section{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:700px){.grid-section{grid-template-columns:1fr}}
+
+    .project, .exp-card{padding:18px;border-radius:12px;background:linear-gradient(180deg,var(--glass),transparent);transition:transform 220ms ease, box-shadow 220ms ease;border:1px solid var(--border-color);}
+    [data-theme="dark"] .project, [data-theme="dark"] .exp-card{border:1px solid var(--border-color)}
+    .project:hover, .exp-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,6,23,0.12)}
+    [data-theme="dark"] .project:hover, [data-theme="dark"] .exp-card:hover{box-shadow:0 18px 40px rgba(2,6,23,0.3)}
+    
+    .project-header { 
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0 0 8px 0;
+    }
+    .project-header h3{
+        margin:0;
+        color:var(--accent);
+    }
+    .project-icon { 
+        font-size: 1.5rem;
+        line-height: 1;
+    }
+
+    .project p, .exp-card p{margin:0 0 12px 0;color:var(--muted);font-size:14px}
+    .project a{display:inline-block;padding:8px 12px;border-radius:8px;background:var(--accent);color:white;text-decoration:none;font-weight:600;transition:opacity 200ms}
+    .project a:hover{opacity:0.9}
+    .project a:last-child { margin-top: 8px; }
+
+    /* Contact form styling (retained) */
+    form{display:flex;flex-direction:column;gap:10px}
+    input,textarea{padding:12px;border-radius:8px;border:1px solid var(--border-color);background:transparent;color:var(--text-primary);font-size:14px}
+    [data-theme="dark"] input, [data-theme="dark"] textarea{border:1px solid var(--border-color)}
+    input:focus, textarea:focus {outline: 2px solid var(--accent); border-color: transparent;}
+    label{font-weight:600;color:var(--muted);font-size:13px}
+    .muted{color:var(--muted);font-size:13px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:white;font-weight:700;cursor:pointer;transition:background 200ms}
+    .btn:hover{background:var(--accent-2)} 
+    .small{font-size:13px}
+
+    /* Separator Style */
+    .section-separator {
+        border: 0;
+        height: 1px;
+        background: var(--border-color);
+        margin: 48px 0;
+    }
+
+    footer{margin-top:36px;text-align:center;color:var(--muted)}
+
+    /* Controls (retained) */
+    .controls{display:flex;align-items:center;gap:8px}
+    .toggle{
+        padding:8px;
+        border-radius:8px;
+        border:1px solid var(--border-color);
+        background:transparent;
+        cursor:pointer;
+        color: var(--muted);
+        display: grid;
+        place-items: center;
+        transition: color 200ms, border-color 200ms;
+    }
+    [data-theme="dark"] .toggle{border:1px solid var(--border-color)}
+    .toggle:hover{color: var(--accent); border-color: var(--accent);}
+    
+    .material-icons-outlined{font-size: 20px;}
+
+    /* Responsive adjustments (retained) */
+    @media (max-width:1000px){
+      .hero{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:700px){
+      body{padding:18px}
+      .hero{grid-template-columns:1fr;}
+      nav{display:none}
+      .logo{width:44px;height:44px}
+      .avatar{height: 200px; font-size: 60px;}
+      .about h1{font-size: 2rem;}
+      .about p{font-size: 1rem;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="top">
+    <header>
+      <div class="brand">
+        <div class="logo">PM</div>
+        <div>
+          <div style="font-weight:700; color:var(--text-primary)">Prithish Misra</div>
+          <div style="font-size:12px;color:var(--muted)">Growth Specialist • B.Tech CSE @ SRM KTR’29</div>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:12px">
+        <nav>
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="controls">
+          <button class="toggle" id="themeToggle" aria-label="Toggle dark mode">
+            <span class="material-icons-outlined" id="themeIcon">
+              brightness_4 </span>
+          </button>
+          <a class="small muted" href="https://www.linkedin.com/in/prithish-misra-8531a2341" target="_blank">LinkedIn</a>
+          <a class="small muted" href="https://github.com/prithishmisra23" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </header>
+    <section class="hero">
+      <div class="card about" id="about">
+        <h1>Hi — I'm <strong>Prithish</strong>.</h1>
+        <p class="muted">I'm a **B.Tech (CSE) student and aspiring entrepreneur** focused on **Growth, AI-driven solutions, and EdTech**. As the Founder of **ShriramJourney.com**, I bridge technical knowledge with strategic **Business Development, B2B Marketing, and Operations** to build scalable products.</p>
+        <div class="skills" style="margin-top:18px">
+          <span class="skill">Lead Generation</span>
+          <span class="skill">B2B Marketing</span>
+          <span class="skill">Operations Management</span>
+          <span class="skill">Start-up Leadership</span>
+          <span class="skill">Streamlit</span>
+          <span class="skill">Python</span>
+          <span class="skill">Creative Writing</span>
+        </div>
+
+        <div style="margin-top:18px;display:flex;gap:10px">
+          <a class="btn" href="#contact">Let's talk</a>
+          <a class="btn" href="#experience" style="background:transparent;border:1px solid var(--accent);color:var(--accent)">View experience</a>
+        </div>
+      </div>
+
+      <aside class="avatar" style="grid-row: span 2;">
+        PM
+      </aside>
+
+      <aside class="card" style="display:flex;flex-direction:column;gap:12px;align-items:flex-start; margin-top: -24px;">
+        <div style="width:100%;display:flex;justify-content:space-between;align-items:center">
+          <div style="font-weight:700;color:var(--accent)">Quick facts</div>
+          <div class="muted small">Based in: Remote (Chennai)</div>
+        </div>
+        <div style="width:100%">
+          <div class="muted small">Current Focus</div>
+          <div style="font-weight:700; color:var(--text-primary)">Growth, AI, and EdTech (ShriramJourney)</div>
+        </div>
+        <div style="width:100%">
+          <div class="muted small">Education</div>
+          <div style="font-weight:700; color:var(--text-primary)">B.Tech CSE @ SRM KTR’29</div>
+        </div>
+      </aside>
+    </section>
+
+    <hr class="section-separator">
+
+    <section style="margin-top:36px" id="experience">
+      <h2>Experience</h2>
+      <div class="grid-section">
+        <div class="card exp-card">
+          <h3>Founder & CEO</h3>
+          <p class="muted">ShriramJourney.com | June 2024 - Present</p>
+          <p>Founded an EdTech platform focused on providing resources for SRM University aspirants. Drove 500+ organic sign-ups through targeted B2B/B2C outreach and content marketing.</p>
+        </div>
+        <div class="card exp-card">
+          <h3>Business Development Intern</h3>
+          <p class="muted">Tech Solutions Inc. | Jan 2024 - Apr 2024</p>
+          <p>Spearheaded lead generation campaigns, resulting in a 15% increase in qualified leads. Developed market analysis reports to identify new growth opportunities in the AI sector.</p>
+        </div>
+        <div class="card exp-card">
+          <h3>Content Marketing Specialist</h3>
+          <p class="muted">Freelance | 2023</p>
+          <p>Wrote high-engagement content for various clients, specializing in AI and business strategy. Managed SEO and content calendar, contributing to a 20% organic traffic uplift.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-separator">
+
+    <section style="margin-top:36px" id="projects">
+      <h2>Select Projects</h2>
+      <div class="grid-section">
+        
+        <div class="card project">
+          <div class="project-header">
+            <span class="project-icon">🧠</span>
+            <h3>AiNTERN: Smart Allocation Engine</h3>
+          </div>
+          <p class="muted">Submitted for Smart India Hackathon 2025</p>
+          <p>An **AI-powered smart allocation engine** for the PM Internship Scheme, ensuring **bias-free** and transparent matching of students with recruiters to support the Viksit Bharat 2047 vision.</p>
+          <p class="muted" style="margin-top:10px;">Tech: Python, Node.js, SQL, MeghRaj/Netlify</p>
+          <a href="#" target="_blank">View Project Details</a>
+        </div>
+        
+        <div class="card project">
+          <div class="project-header">
+            <span class="project-icon">🛰️</span>
+            <h3>Vayunet - AI Air Quality Predictor</h3>
+          </div>
+          <p class="muted">Submitted for Bharatiya Antariksh Hackathon 2025 (ISRO)</p>
+          <p>A full-stack air quality visualizer and predictor using the OpenWeather API. Features **Random Forest ML forecasting** and a clean **Streamlit** UI for location-based AQI prediction.</p>
+          <p class="muted" style="margin-top:10px;">Tech: Python (Flask, ML), Streamlit, OpenWeather API</p>
+          <a href="https://air-quality-forecast-app-fuhjcggmd9h6sgrhsghf98.streamlit.app/" target="_blank">View Live App</a>
+        </div>
+
+        <div class="card project">
+          <div class="project-header">
+            <span class="project-icon">🎓</span>
+            <h3>Shriramjourney (RAG Chatbot)</h3>
+          </div>
+          <p class="muted">Deployed on ShriramJourney.com</p>
+          <p>A custom **RAG-based chatbot** providing instant, accurate answers to prospective students, leading to a 25% reduction in support emails for the EdTech platform.</p>
+          <p class="muted" style="margin-top:10px;">Tech: Python, RAG Model, LLM Fine-Tuning</p>
+          <a href="https://www.shriramjourney.com" target="_blank">View Live Demo</a>
+        </div>
+        
+      </div>
+    </section>
+
+    <hr class="section-separator">
+
+    <section style="margin-top:36px" id="contact">
+      <h2>Get In Touch</h2>
+      <div class="card" style="max-width:600px; margin-top:16px;">
+        <form action="#" method="POST">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required placeholder="John Doe">
+          
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Let's discuss a potential growth partnership..."></textarea>
+          
+          <button type="submit" class="btn" style="margin-top:10px;">
+            Send Message 
+            <span class="material-icons-outlined">send</span>
+          </button>
+        </form>
+      </div>
+    </section>
+    
+    <footer>
+      &copy; <script>document.write(new Date().getFullYear())</script> Prithish Misra. Built with HTML & CSS.
+    </footer>
+
+  </div>
+
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const body = document.body;
+
+    // Load saved theme or default to light
+    const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    
+    // Set initial theme and icon
+    if (savedTheme === 'dark') {
+      body.setAttribute('data-theme', 'dark');
+      themeIcon.textContent = 'light_mode'; // Sun/light icon for dark theme
+    } else {
+      body.removeAttribute('data-theme');
+      themeIcon.textContent = 'brightness_4'; // Moon/dark icon for light theme
+    }
+
+    // Toggle theme function
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = body.getAttribute('data-theme');
+      if (currentTheme === 'dark') {
+        body.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+        themeIcon.textContent = 'brightness_4';
+      } else {
+        body.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        themeIcon.textContent = 'light_mode';
+      }
+    });
+  </script>
+</body>
+</html>
