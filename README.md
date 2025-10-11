@@ -43,11 +43,12 @@ The design is clean, minimal, and fully responsive — adapting seamlessly for m
 
 ## ⚙️ Setup & Usage
 
-You can run the website locally or host it on any static hosting platform (e.g., GitHub Pages, Netlify, or Vercel).
+You can run the website locally or host it on any static hosting platform (https://prithishportfolio.netlify.app/)
+
+ (e.g., GitHub Pages, Netlify, or Vercel).
 
 ### 1️⃣ Clone the Repository
 ```bash
 git clone https://github.com/your-username/prithish-portfolio.git
 cd prithish-portfolio
-----------OUTPUT LINK------------
-https://prithishportfolio.netlify.app/
+
