@@ -1,28 +1,31 @@
 import { motion } from 'framer-motion';
 
-const workItems = [
+const coreVentures = [
     {
-        title: 'Rydin',
+        title: 'RYDIN',
         role: 'Co-Founder',
-        desc: 'Built by SRM students, for SRM students. Real-time geospatial ride matching, girls-only transit security, multi-modal hub pooling, and automated chat mechanics reducing local transit costs by up to 3x. Built to make student mobility structured, safe, and economically efficient.',
+        desc: 'Built to make student mobility structured, safe, and economically efficient.',
+        tag: 'Student mobility platform',
         link: 'https://rydin.vercel.app',
     },
     {
-        title: 'ShriramJourney',
+        title: 'SHRIRAMJOURNEY',
         role: 'Founder',
-        desc: 'A complete digital Ramayana pilgrimage platform. Unifying 45+ sacred sites with interactive mapping, real-time 3D viewers, and AI-powered itineraries for immersive bilingual spiritual mapping. Designed to bring sacred journeys into a structured, accessible digital format.',
+        desc: 'Designed to bring sacred journeys into a structured, accessible digital format.',
+        tag: 'Digital pilgrimage platform',
         link: 'https://shriramjourney.com',
-    },
+    }
+];
+
+const selectProjects = [
     {
         title: 'VayuNet',
-        role: 'AI Engineer',
-        desc: 'Machine learning forecasting pipeline for localized atmospheric stability and pollution tracking.',
+        desc: 'AI air quality prediction system',
         link: 'https://github.com/prithishmisra23/vayunet',
     },
     {
         title: 'Quizito',
-        role: 'Full Stack Engineer',
-        desc: 'High-concurrency gamified evaluation platform running fast real-time synchronization loops.',
+        desc: 'Adaptive AI-based quiz platform',
         link: 'https://quizito.xyz',
     },
 ];
@@ -38,42 +41,69 @@ const WorkPage = () => {
                 <h1 className="text-4xl font-space font-bold mb-6 text-primary tracking-tight">Selected Work</h1>
 
                 <p className="text-secondary mb-16 max-w-2xl leading-relaxed text-lg">
-                    I focus on building structured systems — products that reduce friction and scale intelligently.
-                    Below are ventures and experiments where I’ve applied that philosophy.
+                    I build structured systems — products that reduce friction and scale intelligently.
+                    <br />Below are ventures and applied experiments.
                 </p>
 
-                <div className="flex flex-col border-t border-surface">
-                    {workItems.map((item, idx) => (
-                        <a
-                            key={item.title}
-                            href={item.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="py-10 border-b border-surface group block relative overflow-hidden"
-                        >
-                            <div className="flex flex-col md:flex-row md:items-baseline md:justify-between mb-4">
-                                <h2 className="text-2xl font-space font-bold text-primary relative inline-block transition-colors group-hover:text-accent">
-                                    {item.title}
-                                    <span className="hidden md:inline-block absolute -right-6 top-1/2 -translate-y-1/2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-                                        &rarr;
-                                    </span>
-                                </h2>
-                                <span className="text-sm text-secondary font-mono mt-2 md:mt-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:block">
-                                    {new URL(item.link).hostname}
-                                </span>
-                            </div>
-
-                            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4 text-secondary">
-                                <div className="col-span-1 text-sm pt-1 uppercase tracking-widest font-space font-bold text-primary">
-                                    {item.role}
+                <div className="mb-16">
+                    <h3 className="text-sm font-bold uppercase tracking-widest text-primary font-space mb-8 border-b border-surface pb-4">Core Ventures</h3>
+                    <div className="flex flex-col border-t border-surface">
+                        {coreVentures.map((item, idx) => (
+                            <a
+                                key={item.title}
+                                href={item.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="py-10 border-b border-surface group block relative overflow-hidden"
+                            >
+                                <div className="flex flex-col mb-4">
+                                    <h2 className="text-2xl font-space font-bold text-primary transition-colors group-hover:text-accent">
+                                        {item.title}
+                                    </h2>
+                                    <div className="text-sm text-secondary font-mono mt-2 tracking-widest">
+                                        {item.tag} <span className="mx-2">&bull;</span> {item.role}
+                                    </div>
                                 </div>
-                                <div className="col-span-3 leading-relaxed text-primary/80">
+
+                                <div className="mt-4 leading-relaxed text-secondary mb-6 max-w-2xl">
                                     {item.desc}
                                 </div>
-                            </div>
-                        </a>
-                    ))}
+
+                                <div className="text-sm font-space font-bold uppercase tracking-widest text-primary group-hover:text-accent transition-colors">
+                                    &rarr; Visit Site
+                                </div>
+                            </a>
+                        ))}
+                    </div>
                 </div>
+
+                <div>
+                    <h3 className="text-sm font-bold uppercase tracking-widest text-primary font-space mb-8 border-b border-surface pb-4">Select Projects</h3>
+                    <div className="flex flex-col border-t border-surface">
+                        {selectProjects.map((item, idx) => (
+                            <a
+                                key={item.title}
+                                href={item.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="py-6 border-b border-surface group block relative overflow-hidden flex flex-col md:flex-row justify-between md:items-center"
+                            >
+                                <div className="flex flex-col">
+                                    <h2 className="text-lg font-space font-bold text-primary transition-colors">
+                                        {item.title}
+                                    </h2>
+                                    <div className="text-sm text-secondary font-mono mt-1 w-full max-w-lg truncate">
+                                        {item.desc}
+                                    </div>
+                                </div>
+                                <div className="mt-2 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    &rarr;
+                                </div>
+                            </a>
+                        ))}
+                    </div>
+                </div>
+
             </motion.div>
         </div>
     );

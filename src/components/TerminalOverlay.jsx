@@ -6,23 +6,23 @@ const TerminalOverlay = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [history, setHistory] = useState([
         "Founder OS v1.0",
-        "Type a command.",
+        "Minimal surface. Structured thinking.",
         "",
         "Available commands:",
         "whoami",
         "work",
-        "writing",
+        "philosophy",
         "contact",
         "clear",
         "exit"
     ]);
     const [input, setInput] = useState('');
+    const [commandInProgress, setCommandInProgress] = useState(false);
     const inputRef = useRef(null);
     const navigate = useNavigate();
 
     useEffect(() => {
         const handleKeyDown = (e) => {
-            // Toggle on "G" or "g" conditionally
             if (e.key.toLowerCase() === 'g' && !isOpen && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
                 e.preventDefault();
                 setIsOpen(true);
@@ -43,7 +43,8 @@ const TerminalOverlay = () => {
     }, [isOpen]);
 
     const handleCommand = (e) => {
-        if (e.key === 'Enter') {
+        if (e.key === 'Enter' && !commandInProgress) {
+            e.preventDefault();
             const cmd = input.trim().toLowerCase();
             let response = '';
 
@@ -60,22 +61,25 @@ const TerminalOverlay = () => {
                 case 'ventures':
                 case 'work':
                     response = 'Navigating to /work...';
-                    setTimeout(() => { setIsOpen(false); navigate('/work'); }, 500);
+                    setCommandInProgress(true);
+                    setTimeout(() => { setIsOpen(false); navigate('/work'); setCommandInProgress(false); }, 500);
                     break;
-                case 'writing':
-                    response = 'Navigating to /writing...';
-                    setTimeout(() => { setIsOpen(false); navigate('/writing'); }, 500);
+                case 'philosophy':
+                    response = 'Navigating to /philosophy...';
+                    setCommandInProgress(true);
+                    setTimeout(() => { setIsOpen(false); navigate('/philosophy'); setCommandInProgress(false); }, 500);
                     break;
                 case 'contact':
                     response = 'Navigating to /contact...';
-                    setTimeout(() => { setIsOpen(false); navigate('/contact'); }, 500);
+                    setCommandInProgress(true);
+                    setTimeout(() => { setIsOpen(false); navigate('/contact'); setCommandInProgress(false); }, 500);
                     break;
                 case 'exit':
                     setIsOpen(false);
                     response = 'Terminating session...';
                     break;
                 case 'help':
-                    response = 'Available commands: whoami, work, writing, contact, clear, exit';
+                    response = 'Available commands: whoami, work, philosophy, contact, clear, exit';
                     break;
                 case '':
                     response = '';
@@ -97,26 +101,27 @@ const TerminalOverlay = () => {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="fixed inset-0 z-50 bg-[#000000] text-[#00ff00] font-mono text-sm p-12 max-h-screen overflow-y-auto"
+                    className="fixed inset-0 z-50 bg-[#000000] text-secondary font-mono text-sm p-12 max-h-screen overflow-y-auto outline-none border-none"
                     onClick={() => inputRef.current?.focus()}
                 >
                     <div className="max-w-4xl mx-auto space-y-2">
                         {history.map((line, idx) => (
                             <div key={idx} className="whitespace-pre-wrap">{line}</div>
                         ))}
-                        <div className="flex pt-4">
-                            <span className="mr-3">~ %</span>
+                        <div className="flex pt-4 items-center">
+                            <span className="mr-3 opacity-50">~ %</span>
                             <input
                                 ref={inputRef}
                                 type="text"
                                 value={input}
                                 onChange={(e) => setInput(e.target.value)}
                                 onKeyDown={handleCommand}
-                                className="flex-1 bg-transparent border-none outline-none text-[#00ff00]"
+                                disabled={commandInProgress}
+                                className="flex-1 bg-transparent border-none outline-none text-primary caret-transparent focus:outline-none"
                                 spellCheck="false"
                                 autoComplete="off"
-                                autoFocus
                             />
+                            <span className={`w-2 h-4 bg-secondary ml-1 ${commandInProgress ? 'animate-pulse' : ''}`} />
                         </div>
                     </div>
                 </motion.div>

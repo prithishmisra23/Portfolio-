@@ -30,16 +30,15 @@ const MainLayout = () => {
                 </AnimatePresence>
             </main>
 
-            <footer className="py-8 border-t border-surface max-w-6xl mx-auto w-full px-6 mt-auto">
-                <div className="flex flex-col md:flex-row justify-between items-center text-xs font-mono text-secondary gap-4">
-                    <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
-                        <p>Portfolio v1.0</p>
-                        <span className="hidden md:inline-block">/</span>
-                        <p>Last updated — March 2026</p>
+            <footer className="py-12 border-t border-surface max-w-6xl mx-auto w-full px-6 mt-auto">
+                <div className="flex flex-col md:flex-row justify-between text-xs font-mono text-secondary gap-8">
+                    <div className="flex flex-col gap-2">
+                        <p className="text-primary">&copy; 2026 Prithish Misra</p>
+                        <p>Built deliberately.</p>
                     </div>
-                    <div className="flex gap-6">
-                        <a href="https://github.com/prithishmisra23" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">GitHub</a>
-                        <a href="https://www.linkedin.com/in/prithish-misra-8531a2341/" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">LinkedIn</a>
+                    <div className="flex flex-col gap-2 md:text-right">
+                        <p>Portfolio v1.1</p>
+                        <p>Last updated &mdash; March 2026</p>
                     </div>
                 </div>
             </footer>

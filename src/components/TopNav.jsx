@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Work', path: '/work' },
+    { name: 'Philosophy', path: '/philosophy' },
     { name: 'About', path: '/about' },
-    { name: 'Writing', path: '/writing' },
     { name: 'Contact', path: '/contact' },
 ];
 
@@ -20,8 +20,7 @@ const TopNav = () => {
                 </Link>
                 <div className="hidden md:flex items-center gap-8">
                     {navLinks.map((link) => {
-                        const isActive = location.pathname === link.path ||
-                            (link.path === '/writing' && location.pathname.startsWith('/writing/'));
+                        const isActive = location.pathname === link.path;
 
                         return (
                             <Link
