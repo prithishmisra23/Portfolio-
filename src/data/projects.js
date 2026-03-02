@@ -10,7 +10,7 @@ export const projects = [
         lessons: "Time-series forecasting with highly volatile datasets requires resilient data-cleaning and continuous model retraining loops.",
         futureScope: "Integration with autonomous drone-based sensors for hyper-local validation and dynamic map rendering.",
         githubLink: "https://github.com/prithishmisra23/vayunet",
-        liveLink: null,
+        liveLink: "https://air-quality-forecast-app-fuhjcggmd9h6sgrhsghf98.streamlit.app/",
     },
     {
         id: "quizito",
@@ -23,6 +23,6 @@ export const projects = [
         lessons: "Managing websocket lifecycle events on scale requires careful architectural planning to prevent memory leaks and zombie connections.",
         futureScope: "Implementation of AI-generated dynamic question pools and advanced user-cohort analytics.",
         githubLink: "https://github.com/prithishmisra23/quizito",
-        liveLink: "https://quizito.xyz",
+        liveLink: "https://quizito-frontend.onrender.com/",
     }
 ];

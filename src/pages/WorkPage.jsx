@@ -21,12 +21,12 @@ const selectProjects = [
     {
         title: 'VayuNet',
         desc: 'AI air quality prediction system',
-        link: 'https://github.com/prithishmisra23/vayunet',
+        link: 'https://air-quality-forecast-app-fuhjcggmd9h6sgrhsghf98.streamlit.app/',
     },
     {
         title: 'Quizito',
         desc: 'Adaptive AI-based quiz platform',
-        link: 'https://quizito.xyz',
+        link: 'https://quizito-frontend.onrender.com/',
     },
 ];
 
