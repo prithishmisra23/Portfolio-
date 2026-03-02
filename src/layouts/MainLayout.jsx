@@ -39,7 +39,7 @@ const MainLayout = () => {
                     </div>
                     <div className="flex gap-6">
                         <a href="https://github.com/prithishmisra23" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">GitHub</a>
-                        <a href="https://linkedin.com/in/prithishmisra23" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">LinkedIn</a>
+                        <a href="https://www.linkedin.com/in/prithish-misra-8531a2341/" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">LinkedIn</a>
                     </div>
                 </div>
             </footer>
