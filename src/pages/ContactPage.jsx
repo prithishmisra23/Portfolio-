@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { links } from '../data/links';
 
 const ContactPage = () => {
     const [status, setStatus] = useState('idle');
@@ -73,10 +74,25 @@ const ContactPage = () => {
                 </form>
 
                 <div className="mt-24 pt-12 border-t border-surface flex flex-col items-center text-center">
-                    <div className="text-sm text-secondary font-mono mb-4">Or directly at:</div>
-                    <a href="mailto:prithishmisra23@gmail.com" className="text-xl font-space text-primary hover:text-accent transition-colors duration-300">
+                    <div className="text-sm text-secondary font-mono mb-6">Or directly at:</div>
+                    <a href="mailto:prithishmisra23@gmail.com" className="text-xl font-space text-primary hover:text-accent transition-colors duration-300 mb-12">
                         prithishmisra23@gmail.com
                     </a>
+
+                    <div className="text-sm text-secondary font-mono mb-6">Connect across the ecosystem:</div>
+                    <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
+                        {links.map(link => (
+                            <a
+                                key={link.name}
+                                href={link.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-secondary hover:text-primary transition-colors text-sm font-medium"
+                            >
+                                {link.name}
+                            </a>
+                        ))}
+                    </div>
                 </div>
             </motion.div>
         </div>
