@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-primary font-sans antialiased overflow-x-hidden selection:bg-accent/20 selection:text-accent;
+  }
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.background');
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.surface');
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.secondary');
+}

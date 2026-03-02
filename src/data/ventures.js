@@ -1,0 +1,30 @@
+export const ventures = [
+    {
+        id: "rydin",
+        title: "Rydin",
+        role: "Co-Founder",
+        liveUrl: "https://rydin.vercel.app",
+        problem: "Inefficient local transport ecosystems lack deep technical integration and robust routing platforms accessible for daily commuters and specialized fleets.",
+        vision: "To build a hyper-optimized routing and logistical ecosystem that scales seamlessly from individual users to enterprise mobility fleets.",
+        architecture: "Event-driven microservices with highly concurrent WebSocket connections, integrated with real-time geospatial processing systems.",
+        engineeringChallenges: "Managing real-time state synchronization across thousands of active nodes while ensuring sub-50ms latency for critical logistics updates.",
+        productStrategy: "B2B2C growth lever — aggressively seeding local hubs, optimizing route profitability, and expanding to high-density corridors.",
+        roadmap: "Phase 1: Minimum Lovable Routing. Phase 2: AI-driven predictive demand matching. Phase 3: Autonomous fleet protocol integrations.",
+        techStack: ["React", "Express", "PostgreSQL", "Socket.IO", "Redis", "Google Maps Platform"],
+        image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80&w=1200",
+    },
+    {
+        id: "shriramjourney",
+        title: "ShriramJourney.com",
+        role: "Founder",
+        liveUrl: "https://shriramjourney.com",
+        purpose: "Create a rich, historical, and deeply interactive digital experience mapping out an ancient epic through precise geographical routing.",
+        vision: "To become the definitive, interactive digital chronicle of cultural and historical journeys, blending theology with geo-mapping technology.",
+        designPhilosophy: "Immersive realism and spatial narrative. Users should feel the scale and passage of time through fluid transitions and dynamic typography.",
+        systemArchitecture: "Serverless edge functions powering a headless CMS, serving heavily optimized static assets and lazy-loaded WebGL models.",
+        growthStrategy: "Organic SEO via historical long-tail keywords, partnered with educational and cultural institutions for rapid domain authority scaling.",
+        lessonsLearned: "Complex WebGL integration on mobile requires aggressive texture compression. Realized the necessity of LOD (Level of Detail) algorithms for geographic maps.",
+        roadmap: "Phase 1: The Core Path (Live). Phase 2: Community interpretations and historical overlays. Phase 3: Immersive VR modes.",
+        image: "https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?auto=format&fit=crop&q=80&w=1200",
+    }
+];
